@@ -139,7 +139,7 @@ async function processPrivateKey(privateKey) {
       console.log(`Available Box(es): ${availableBoxes}`.green);
       console.log('');
 
-      const method = '1';
+      const method = '2';
 
       if (method === '1') {
         console.log(`[ ${moment().format('HH:mm:ss')} ] Please wait...`.yellow);
@@ -150,10 +150,7 @@ async function processPrivateKey(privateKey) {
       } else if (method === '2') {
         let totalClaim;
         do {
-          totalClaim = readlineSync.question(
-            `How many boxes do you want to open? (Maximum is: ${availableBoxes}): `
-              .blue
-          );
+          totalClaim = availableBoxes;
 
           if (totalClaim > availableBoxes) {
             console.log(`You cannot open more boxes than available`.red);
